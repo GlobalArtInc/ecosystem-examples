@@ -12,6 +12,7 @@ const packagesToWatch = [
   "nestjs-fastify",
   "nestjs-logger",
   "nestjs-redis",
+  "nestjs-temporal",
   "nestjs-swagger",
   "nestjs-typeorm-pagination",
   "passport",
