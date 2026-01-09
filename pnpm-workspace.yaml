@@ -1,0 +1,10 @@
+packages:
+  - examples/**/*
+
+onlyBuiltDependencies:
+  - '@apollo/protobufjs'
+  - '@nestjs/core'
+  - '@scarf/scarf'
+  - hiredis
+  - protobufjs
+  - unrs-resolver
