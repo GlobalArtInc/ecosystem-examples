@@ -18,7 +18,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@globalart/nestjs-redis": "file:../../../ecosystem/packages/nestjs-redis",
+    "@globalart/nestjs-redis": "workspace:*",
     "@nestjs/common": "11.1.11",
     "@nestjs/core": "11.1.11",
     "@nestjs/platform-express": "11.1.11",

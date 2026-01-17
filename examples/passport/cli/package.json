@@ -10,7 +10,7 @@
     "precli": "npm run build"
   },
   "dependencies": {
-    "@globalart/passport": "file:../../../../ecosystem/packages/passport",
+    "@globalart/passport": "workspace:*",
     "@types/node": "^25.0.3",
     "express": "^5.1.0",
     "express-session": "^1.18.1",

@@ -18,7 +18,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@globalart/nestjs-grpc": "file:../../../../ecosystem/packages/nestjs-grpc",
+    "@globalart/nestjs-grpc": "workspace:*",
     "@grpc/grpc-js": "^1.14.3",
     "@nestjs/common": "11.1.11",
     "@nestjs/core": "11.1.11",

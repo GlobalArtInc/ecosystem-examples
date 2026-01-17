@@ -18,7 +18,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@globalart/nestjs-temporal": "file:../../../ecosystem/packages/nestjs-temporal",
+    "@globalart/nestjs-temporal": "workspace:*",
     "@nestjs/common": "^11.1.11",
     "@nestjs/core": "^11.1.11",
     "@nestjs/platform-fastify": "^11.1.11",

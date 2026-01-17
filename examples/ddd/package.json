@@ -18,7 +18,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@globalart/ddd": "file:../../../ecosystem/packages/ddd",
+    "@globalart/ddd": "workspace:*",
     "@nestjs/common": "^11.1.11",
     "@nestjs/core": "^11.1.11",
     "@nestjs/graphql": "^13.2.0",

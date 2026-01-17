@@ -18,7 +18,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@globalart/nestjs-logger": "file:../../../ecosystem/packages/nestjs-logger",
+    "@globalart/nestjs-logger": "workspace:*",
     "@nestjs/apollo": "^13.2.1",
     "@apollo/server": "^5.2.0",
     "@apollo/server-plugin-landing-page-graphql-playground": "^4.0.1",

@@ -19,7 +19,7 @@ import { HelloWorldActivity } from "./activities";
           workerHeartbeatInterval: "30 seconds",
         });
         const connection = await NativeConnection.connect({
-          address: "temporal-frontend.temporal-dev.svc.cluster.local:7233",
+          address: "127.0.0.1:7233",
         });
         const workflowBundle = await bundleWorkflowCode({
           workflowsPath: path.join(__dirname, "./workflows"),
@@ -37,7 +37,7 @@ import { HelloWorldActivity } from "./activities";
     TemporalModule.registerClientAsync({
       useFactory: async () => {
         const connection = await Connection.connect({
-          address: "temporal-frontend.temporal-dev.svc.cluster.local:7233",
+          address: "127.0.0.1:7233",
         });
 
         return {

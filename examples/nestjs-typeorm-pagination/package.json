@@ -18,8 +18,8 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
-    "@globalart/nestjs-swagger": "file:../../../ecosystem/packages/nestjs-swagger",
-    "@globalart/nestjs-typeorm-pagination": "file:../../../ecosystem/packages/nestjs-typeorm-pagination",
+    "@globalart/nestjs-swagger": "workspace:*",
+    "@globalart/nestjs-typeorm-pagination": "workspace:*",
     "@globalart/nestjs-zod": "1.0.0",
     "@nestjs/common": "^11.1.11",
     "@nestjs/core": "^11.1.11",
