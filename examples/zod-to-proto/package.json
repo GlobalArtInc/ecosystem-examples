@@ -11,13 +11,13 @@
   },
   "dependencies": {
     "@globalart/zod-to-proto": "workspace:*",
-    "zod": "^4.3.5"
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@types/express": "^5.0.5",
     "@types/jest": "^30.0.0",
-    "@types/node": "^25.0.3",
-    "prettier": "^3.6.2",
+    "@types/node": "^25.0.10",
+    "prettier": "^3.8.1",
     "typescript": "^5.9.3"
   },
   "jest": {

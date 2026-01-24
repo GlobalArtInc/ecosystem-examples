@@ -5,12 +5,17 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 import { AppController } from './app.controller';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { configs } from './config';
+import { CronExpression } from '@globalart/nestjs-typeorm-outbox';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+      load: [...configs],
+    }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: 'temporal-postgres.temporal-dev',
       port: 5432,
       username: 'postgres',
       password: 'postgres',
@@ -18,23 +23,20 @@ import { configs } from './config';
       synchronize: true,
       entities: [TypeormOutboxEntity],
     }),
-    ConfigModule.forRoot({
-      isGlobal: true,
-      load: [...configs],
-    }),
     TypeormOutboxModule.forRoot({
       typeOrmConnectionName: 'default',
     }),
-    TypeormOutboxModule.registerCronAsync({
-      useFactory: (configService: ConfigService) => {
-        return {
-          kafkaConfig: configService.get('kafka'),
-          typeOrmConnectionName: 'default',
-        }
-      },
-      inject: [ConfigService],
-    })
+    // TypeormOutboxModule.registerCronAsync({
+    //   useFactory: (configService: ConfigService) => {
+    //     return {
+    //       kafkaConfig: configService.get('kafka'),
+    //       typeOrmConnectionName: 'default',
+    //       cronExpression: CronExpression.EVERY_1_SECOND,
+    //     }
+    //   },
+    //   inject: [ConfigService],
+    // })
   ],
-  controllers: [AppController],
+  // controllers: [AppController],
 })
 export class AppModule {}
