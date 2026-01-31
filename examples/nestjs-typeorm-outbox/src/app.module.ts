@@ -23,19 +23,16 @@ import { CronExpression } from '@globalart/nestjs-typeorm-outbox';
       synchronize: true,
       entities: [TypeormOutboxEntity],
     }),
-    TypeormOutboxModule.forRoot({
-      typeOrmConnectionName: 'default',
-    }),
-    // TypeormOutboxModule.registerCronAsync({
-    //   useFactory: (configService: ConfigService) => {
-    //     return {
-    //       kafkaConfig: configService.get('kafka'),
-    //       typeOrmConnectionName: 'default',
-    //       cronExpression: CronExpression.EVERY_1_SECOND,
-    //     }
-    //   },
-    //   inject: [ConfigService],
-    // })
+    TypeormOutboxModule.forRoot(),
+    TypeormOutboxModule.registerCronAsync({
+      useFactory: (configService: ConfigService) => {
+        return {
+          brokerConfig: configService.get('kafka'),
+          cronExpression: CronExpression.EVERY_SECOND,
+        }
+      },
+      inject: [ConfigService],
+    })
   ],
   // controllers: [AppController],
 })
