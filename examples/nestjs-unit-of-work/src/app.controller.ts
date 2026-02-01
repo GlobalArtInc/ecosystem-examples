@@ -37,4 +37,14 @@ export class AppController {
       return test;
     }, IsolationLevel.SERIALIZABLE);
   }
+
+  @Get('without-uow')
+  async withoutUow() {
+    const test = this.testRepository.create({
+      name: 'Test',
+    });
+    await this.testRepository.save(test);
+    throw new Error('Test error');
+    return test;
+  }
 }
