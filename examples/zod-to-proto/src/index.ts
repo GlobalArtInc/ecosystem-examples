@@ -27,7 +27,7 @@ export const getProjectUsersResponseSchema = z.object({
         createdAt: z.string(),
         updatedAt: z.string(),
       }),
-    })
+    }),
   ),
 });
 
@@ -43,7 +43,7 @@ console.log(
     services: {
       TestService: func,
     },
-  })
+  }),
 );
 
 const testServiceProto = zodToProtobufService({
@@ -53,3 +53,5 @@ const testServiceProto = zodToProtobufService({
 });
 
 console.log(testServiceProto);
+
+fs.writeFileSync("user-service-new.proto", testServiceProto);

@@ -19,25 +19,34 @@ import { HelloWorldActivity } from "./activities";
           workerHeartbeatInterval: "30 seconds",
         });
         const connection = await NativeConnection.connect({
-          address: "127.0.0.1:7233",
+          address:
+            "temporal-platform-frontend.temporal-ru-default.svc.cluster.local:7233",
         });
         const workflowBundle = await bundleWorkflowCode({
           workflowsPath: path.join(__dirname, "./workflows"),
         });
 
         return {
-          workerOptions: {
-            connection,
-            taskQueue: "default",
-            workflowBundle,
-          },
+          workerOptions: [
+            {
+              connection,
+              taskQueue: "default",
+              workflowBundle,
+            },
+            {
+              connection,
+              taskQueue: "test-queue",
+              workflowBundle,
+            },
+          ],
         };
       },
     }),
     TemporalModule.registerClientAsync({
       useFactory: async () => {
         const connection = await Connection.connect({
-          address: "127.0.0.1:7233",
+          address:
+            "temporal-platform-frontend.temporal-ru-default.svc.cluster.local:7233",
         });
 
         return {
