@@ -9,10 +9,10 @@ import { UserService } from "./user.service";
 @Module({
   imports: [
     LoggerModule.forRoot({
-      level: "debug",
+      level: "info",
       timestamp: true,
       colors: true,
-      format: "text",
+      format: "json",
       logRequests: true,
     }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
